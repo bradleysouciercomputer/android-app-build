@@ -36,5 +36,5 @@ The workflow also builds automatically whenever changes are pushed to `main`.
 - Google's Material 3 for Compose
 - Android Gradle Plugin 8.11.1
 - Kotlin 2.2.21
-- Compose BOM 2026.07.00
+- Compose BOM 2026.06.01
 - Gradle 8.13
