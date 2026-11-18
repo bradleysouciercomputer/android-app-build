@@ -1,27 +1,40 @@
-# Firestick Message
+# Material Notes
 
-A minimal Android / Amazon Fire TV app. It displays a single centered, inert button-shaped control reading **This app runs on firestick**.
+A native Android note-taking app built with Google's official Jetpack Compose Material 3 components.
 
-## Automatic APK build (no Android Studio required)
+## Features
+
+- Create and edit notes with a title and body
+- Automatically persist notes on the device
+- Search note titles and content
+- Pin important notes
+- Archive notes to keep the main list tidy
+- Move notes to Trash, restore them, or permanently delete them
+- Grid and list layouts
+- Note color choices
+- System, Light, and Dark appearance
+- Android 12+ Dynamic Color support
+
+Notes are stored locally on the device. The app does not need an account or network access.
+
+## Build an APK with GitHub Actions
+
+No Android Studio installation is required.
 
 1. Open the **Actions** tab in this repository.
-2. Select **Build Fire TV APK**.
-3. Click **Run workflow** (or wait for a build after a push).
-4. When the run completes, open it and download the **FirestickMessage-debug-apk** artifact.
-5. Extract the downloaded ZIP to get `app-debug.apk`.
+2. Select **Build Material Notes APK**.
+3. Open the latest successful run.
+4. Download the **MaterialNotes-debug-apk** artifact.
+5. Extract the ZIP to get `app-debug.apk`.
 
-The workflow builds a debug APK using Java 17, Gradle 8.9, and Android SDK Platform 35. The app includes the Android TV `LEANBACK_LAUNCHER` category and does not require a touchscreen.
+The workflow also builds automatically whenever changes are pushed to `main`.
 
-## App behavior
+## Technology
 
-The button is deliberately non-interactive: it cannot be clicked, focused, or activated. The app requests no network permissions and contains no login, menus, or extra features.
-
-## Manual build
-
-With Java 17, Gradle 8.9, and Android SDK Platform 35 installed, run:
-
-```bash
-gradle assembleDebug
-```
-
-The APK is generated at `app/build/outputs/apk/debug/app-debug.apk`.
+- Kotlin
+- Jetpack Compose
+- Google's Material 3 for Compose
+- Android Gradle Plugin 8.11.1
+- Kotlin 2.2.21
+- Compose BOM 2026.09.00
+- Gradle 8.13

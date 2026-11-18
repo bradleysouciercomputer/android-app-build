@@ -1,4 +1,4 @@
-name: Build Fire TV APK
+name: Build Material Notes APK
 
 on:
   push:
@@ -7,9 +7,10 @@ on:
 
 permissions:
   contents: read
+
 jobs:
   build:
-    name: Build debug APK
+    name: Build Material Notes debug APK
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -26,13 +27,13 @@ jobs:
         with:
           packages: 'platform-tools'
 
-      - name: Set up Gradle 8.9
+      - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.13'
 
       - name: Install Android SDK packages
-        run: sdkmanager 'platform-tools' 'platforms;android-35' 'build-tools;35.0.0'
+        run: sdkmanager 'platform-tools' 'platforms;android-36' 'build-tools;36.0.0'
 
       - name: Build APK
         run: gradle --no-daemon assembleDebug
@@ -40,7 +41,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: FirestickMessage-debug-apk
+          name: MaterialNotes-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
