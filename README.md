@@ -34,7 +34,7 @@ The workflow also builds automatically whenever changes are pushed to `main`.
 - Kotlin
 - Jetpack Compose
 - Google's Material 3 for Compose
-- Android Gradle Plugin 8.11.1
-- Kotlin 2.2.21
+- Android Gradle Plugin 9.3.1
+- Kotlin 2.4.21
 - Compose BOM 2026.09.00
-- Gradle 8.13
+- Gradle 9.5.0
